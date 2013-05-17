@@ -30,7 +30,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 
 
-app.set('hostname', '127.0.0.1');
+app.set('hostname', 'http://mytomatoes.herokuapp.com/');
 app.set('TWITTER_CONSUMER_KEY', 'eU2LJAfO0eELeXv4PS4g');
 app.set('TWITTER_CONSUMER_SECRET', 'dSYifnIOwYRevPyYIz5awwoDFRi2z8NDL7ILTLxuY');
 
@@ -42,7 +42,7 @@ if ('development' == app.get('env')) {
 passport.use(new TwitterStrategy({
 	consumerKey: app.get('TWITTER_CONSUMER_KEY'),
 	consumerSecret: app.get('TWITTER_CONSUMER_SECRET'),
-	callbackURL:    'http://' + app.get('hostname') + ':' + app.get('port') + '/auth/twitter/callback'
+	callbackURL:    app.get('hostname') + '/auth/twitter/callback'
 	},
 	function(token, tokenSecret, profile, done){
 	/*	
