@@ -10,7 +10,7 @@ var express = require('express')
   , path = require('path')
   , passport = require('passport')
   , TwitterStrategy  = require('passport-twitter').Strategy
-  , manifest = require('./client/manifest.webapp')
+  , manifest = require('./client/manifest.webapp');
 
 var app = express();
 
