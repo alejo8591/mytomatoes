@@ -9,8 +9,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , TwitterStrategy  = require('passport-twitter').Strategy
-  , manifest = require('./client/manifest.webapp');
+  , TwitterStrategy  = require('passport-twitter').Strategy;
+  // , manifest = require('./client');
 
 var app = express();
 
@@ -69,7 +69,7 @@ app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { successRedirect: '/',
                                      failureRedirect: '/login' }));
 
-// app.get('/install', manifest);
+app.get('/install', manifest);
 
 
 http.createServer(app).listen(app.get('port'), function(){
