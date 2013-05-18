@@ -28,7 +28,7 @@ app.use(express.bodyParser());
 app.use(passport.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-app.use('/client', express.static.join(__dirname, 'client'))
+app.use('/client', express.static(path.join(__dirname, 'client'))
 
 app.set('hostname', 'http://mytomatoes.herokuapp.com/');
 app.set('TWITTER_CONSUMER_KEY', 'eU2LJAfO0eELeXv4PS4g');
