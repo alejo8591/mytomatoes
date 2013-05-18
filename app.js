@@ -9,8 +9,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , TwitterStrategy  = require('passport-twitter').Strategy;
-  // , manifest = require('./client');
+  , TwitterStrategy  = require('passport-twitter').Strategy
+  , manifest = require('./client');
 
 var app = express();
 
