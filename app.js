@@ -69,7 +69,7 @@ app.get('/auth/twitter/callback',
   passport.authenticate('twitter', { successRedirect: '/',
                                      failureRedirect: '/login' }));
 
-app.get('/install/manifest.webapp', manifest);
+app.get('/install', manifest);
 
 
 http.createServer(app).listen(app.get('port'), function(){
