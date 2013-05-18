@@ -9,6 +9,7 @@
     "express": "3.2.0",
     "jade": "*",
     "passport":"*",
-    "passport-twitter":"*"
+    "passport-twitter":"*",
+    "mongoose": "*"
   }
 }

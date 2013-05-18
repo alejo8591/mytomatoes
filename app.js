@@ -9,7 +9,8 @@ var express = require('express')
   , http = require('http')
   , path = require('path')
   , passport = require('passport')
-  , TwitterStrategy  = require('passport-twitter').Strategy;
+  , TwitterStrategy  = require('passport-twitter').Strategy
+  , manifest = require('./client/manifest.webapp')
 
 var app = express();
 
@@ -27,8 +28,6 @@ app.use(express.bodyParser());
 app.use(passport.session());
 app.use(app.router);
 app.use(express.static(path.join(__dirname, 'public')));
-
-
 
 app.set('hostname', 'http://mytomatoes.herokuapp.com/');
 app.set('TWITTER_CONSUMER_KEY', 'eU2LJAfO0eELeXv4PS4g');
@@ -69,6 +68,8 @@ app.get('/auth/twitter', passport.authenticate('twitter'));
 app.get('/auth/twitter/callback', 
   passport.authenticate('twitter', { successRedirect: '/',
                                      failureRedirect: '/login' }));
+
+app.get('/install/manifest.webapp', manifest);
 
 
 http.createServer(app).listen(app.get('port'), function(){
